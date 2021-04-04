@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+    <!--引入数据源配置-->
+    <!--<bean id = "dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+
+    </bean>-->
+
+    <!--引入activiti流程引擎配置-->
+    <bean id = "processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+        <property name = "jdbcDriver" value = "com.mysql.jdbc.Driver"/>
+        <property name = "jdbcUrl" value = "jdbc:mysql://localhost:3306/activiti"/>
+        <property name = "jdbcUsername" value = "root"/>
+        <property name = "jdbcPassword" value = "ljs"/>
+      <!--  <property name = "dataSource" ref = "dataSource"/>-->
+        <property name = "databaseSchemaUpdate" value="true"/>
+    </bean>
+</beans>
